@@ -3,6 +3,7 @@ function setup() {
     rectMode(CENTER);
     angleMode(DEGREES);
     noStroke();
+    printed = 0;
 }
 function draw() {
   
@@ -37,9 +38,16 @@ function draw() {
   
     fill(108, 172, 228);
     ellipse(-0,-0,100,100);
+     
+    if (second() == 0 && printed == 0) {
+      printed = 1;
+      print(minute());
+    }
     
+    if (printed == 1 && second() == 1 ) {
+      printed = 0;
+    }
     
-  
     
 }
 
